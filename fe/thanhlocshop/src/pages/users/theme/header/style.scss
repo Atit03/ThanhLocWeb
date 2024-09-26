@@ -1,4 +1,71 @@
-.header__top{
+@use "sass:map";
+@import "style/pages/theme.scss";
+
+.header__top {
     background: #f5f5f5;
-    //background: red;
+}
+
+.header__top_left {
+    ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        column-gap: 20px;
+        padding: 10px 0 13px;
+        margin-left: 150px;
+
+        li {
+            font-size: 14px;
+            display: flex;
+            color: map.get($theme-colors, "normal-text");
+            align-items: center;
+            column-gap: 2px;
+        }
+
+        li:first-child {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                right: -10px;
+                top: 1px;
+                height: 20px;
+                width: 1px;
+                background: #b81919;
+                opacity: 0.5; 
+                content: "";
+            }
+        }
+    }
+}
+
+.header__top_right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px 0 13px;
+
+    ul {
+        display: flex;
+        column-gap: 5px;
+        list-style: none;
+
+        a {
+            font-size: 14px;
+            display: inline-block;
+            color: map.get($theme-colors, "normal-text");
+        }
+
+        li:last-child {
+            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 150px;
+        }
+
+        span {
+            font-size: 14px;
+            margin-left: 2px;
+            //color: map.get($theme-colors, "normal-text");
+        }
+    }
 }
